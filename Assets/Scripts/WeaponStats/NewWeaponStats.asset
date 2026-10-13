@@ -20,5 +20,5 @@ MonoBehaviour:
   maxMagazineSize: 30
   maxTotalAmmo: 90
   reloadTime: 1.5
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 6584992806844868640, guid: 68b67fa0d99b83948aaa536086a01c8b, type: 3}
   hitFeedbackPrefab: {fileID: 0}
