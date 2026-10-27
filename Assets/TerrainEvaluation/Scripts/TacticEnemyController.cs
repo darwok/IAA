@@ -19,12 +19,15 @@ public class TacticEnemyController : MonoBehaviour, IEnemy
     }
 
     [Task]
-    public void MoteToAttackPoint()
+    public void MoveToAttackPoint()
     {
         Transform point = tactics.GetBestPoint(TAState.Attack);
 
-        if (point != null)
+        if (point == null)
+        {
             Task.current.Fail();
+            return;
+        }
         
         agent.SetDestination(point.position);
         if (!agent.pathPending && agent.remainingDistance < 1.5f)
@@ -36,8 +39,11 @@ public class TacticEnemyController : MonoBehaviour, IEnemy
     {
         Transform point = tactics.GetBestPoint(TAState.Flee);
 
-        if (point != null)
+        if (point == null)
+        {
             Task.current.Fail();
+            return;
+        }
 
         agent.SetDestination(point.position);
         if (!agent.pathPending && agent.remainingDistance < 1.5f)

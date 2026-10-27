@@ -14,7 +14,7 @@ public class TCoverPoint : MonoBehaviour
 
     void EvaluateCover()
     {
-        if (player != null) return;
+        if (player == null) return;
         Vector3 direction = (player.position - transform.position).normalized;
         
         RaycastHit hit;
