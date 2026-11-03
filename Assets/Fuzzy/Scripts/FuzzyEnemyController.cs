@@ -81,4 +81,17 @@ public class FuzzyEnemyController : MonoBehaviour
         if (distance >= 20) return 1;
         return (distance - 10) / 10;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, fleeRange);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 3f);
+
+    }
 }
